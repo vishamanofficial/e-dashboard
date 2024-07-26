@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./Nav.css";
 
 const Nav = () => {
   const navStyle = {
@@ -39,43 +40,62 @@ const Nav = () => {
 
   return (
     <nav style={navStyle}>
-      <div style={{ color: "#ffffff", fontSize: "1.5rem", fontWeight: "bold" }}>
+      <div style={{ color: "#ffffff", fontSize: "1.5rem", fontWeight: "bold", display:'flex', alignItems:"center" }}>
+        <img style={{width:"45px", marginRight:"10px"}} src="https://vishamanofficial-portfolio.vercel.app/images/aman.png" alt="logo" />
         E-Commerce Dashboard
       </div>
-      <ul style={ulStyle}>
-        <li style={liStyle}>
-          <Link to="/" style={linkStyle}>
-            Products
-          </Link>
-        </li>
-        <li style={liStyle}>
-          <Link to="/add" style={linkStyle}>
-            Add Products
-          </Link>
-        </li>
-        <li style={liStyle}>
-          <Link to="/update" style={linkStyle}>
-            Update Products
-          </Link>
-        </li>
-        <li style={liStyle}>
-          <Link to="/profile" style={linkStyle}>
-            Profile
-          </Link>
-        </li>
-
-        <li style={liStyle}>
-          {auth ? (
-            <Link onClick={logout} to="/signup" style={linkStyle}>
-              Logout
+      {auth ? (
+        <ul style={ulStyle}>
+          <li style={liStyle}>
+            <Link to="/" style={linkStyle}>
+              Products
             </Link>
-          ) : (
-            <Link to="/signup" style={linkStyle}>
+          </li>
+          <li style={liStyle}>
+            <Link to="/add" style={linkStyle}>
+              Add Products
+            </Link>
+          </li>
+          <li style={liStyle}>
+            <Link to="/update" style={linkStyle}>
+              Update Products
+            </Link>
+          </li>
+          <li style={liStyle}>
+            <Link to="/profile" style={linkStyle}>
+              Profile
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={logout}
+              to="/signup"
+              style={linkStyle}
+              className="button-link"
+            >
+              Logout {" "}
+              {
+                localStorage.getItem("user")
+                 ? JSON.parse(localStorage.getItem("user")).name
+                  : ""
+              }
+            </Link>
+          </li>
+        </ul>
+      ) : (
+        <ul style={ulStyle}>
+          <li style={liStyle}>
+            <Link to="/signup" style={linkStyle} className="button-link">
               Sign Up
             </Link>
-          )}
-        </li>
-      </ul>
+          </li>
+          <li style={liStyle}>
+            <Link to="/login" style={linkStyle} className="button-link">
+              Login
+            </Link>
+          </li>
+        </ul>
+      )}
     </nav>
   );
 };
