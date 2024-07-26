@@ -19,9 +19,3 @@ app.post("/register", async (req,res)=>{
 })
 
 app.listen(5000)
-
-// {
-//     "name": "monika",
-//     "email" : "mona@gmail.com",
-//     "password": "test"
-// }
