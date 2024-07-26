@@ -1,24 +1,3 @@
-// import React, { useState } from 'react'
-
-// const SignUp = () => {
-//     const [name, setName] = useState('')
-//     const [email, setEmail] = useState('')
-//     const [password, setPassword] = useState('')
-
-//   return (
-//     <div>
-//       <h1>Register</h1>
-
-//       <input type="text" placeholder='Enter Name' />
-//       <input type="email" placeholder='Enter Email' />
-//       <input type="password" placeholder='Enter Password' />
-//       <button type='button'>Sign Up</button>
-//     </div>
-//   )
-// }
-
-// export default SignUp
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -31,7 +10,7 @@ const SignUp = () => {
 
   useEffect(() => {
     const auth = localStorage.getItem("user");
-    if (auth) {
+    if (auth) { 
       navigate("/");
     }
   });
