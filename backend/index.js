@@ -51,4 +51,14 @@ app.get("/products", async (req, res) => {
   
 });
 
+app.delete("/product/:id", async (req, res) => {
+  try {
+    const result = await Product.deleteOne({ _id: req.params.id });
+    res.send(result);
+  } catch (error) {
+    res.status(500).send({ error: "An error occurred while deleting the product." });
+  }
+});
+
+
 app.listen(5000);

@@ -20,3 +20,18 @@
   color: white;
   text-decoration: none;
 }
+
+.product-list{
+  text-align: center;
+  margin-top: 50px;
+  height: 200vh;
+}
+.product-list ul {
+  margin: 0;
+}
+.product-list ul li {
+  display: inline-block;
+  border: 1px solid skyblue;
+  padding: 5px;
+  width: 150px;
+}
