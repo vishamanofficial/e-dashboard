@@ -56,16 +56,16 @@ const Nav = () => {
               Add Products
             </Link>
           </li>
-          <li style={liStyle}>
+          {/* <li style={liStyle}>
             <Link to="/update" style={linkStyle}>
               Update Products
             </Link>
-          </li>
-          <li style={liStyle}>
+          </li> */}
+          {/* <li style={liStyle}>
             <Link to="/profile" style={linkStyle}>
               Profile
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               onClick={logout}
